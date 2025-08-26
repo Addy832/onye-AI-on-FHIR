@@ -1,14 +1,14 @@
 [build]
   base = "frontend/"
-  command = "npm run build"
-  publish = "frontend/.next"
+  command = "npm ci --include=dev && npm run build"
+  publish = ".next"
 
 # Build environment variables
 [build.environment]
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
-  NPM_FLAGS = "--prefix=/opt/buildhome/.local"
   NODE_VERSION = "18"
+  NPM_CONFIG_PRODUCTION = "false"
 
 # Next.js specific settings
 [build.processing]
