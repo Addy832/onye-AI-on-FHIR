@@ -376,9 +376,13 @@ if __name__ == '__main__':
     logger.info("  GET  /api/conditions        - Get available conditions")
     logger.info("  POST /api/fhir/search       - Direct FHIR search")
     
-    # Run Flask app
+    # Run Flask app (production-ready configuration)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_ENV') == 'development'
+    
     app.run(
-        host='127.0.0.1',
-        port=5000,
-        debug=True
+        host='0.0.0.0',
+        port=port,
+        debug=debug
     )

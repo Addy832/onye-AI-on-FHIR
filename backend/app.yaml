@@ -1,0 +1,16 @@
+runtime: python311
+
+env_variables:
+  FLASK_ENV: production
+  PORT: 8080
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  
+resources:
+  cpu: 2
+  memory_gb: 4
+
+# Timeout for startup (ML models take time to load)
+timeout: 300s
