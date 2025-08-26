@@ -8,6 +8,11 @@ const nextConfig = {
   trailingSlash: true,
   distDir: 'out',
   
+  // Disable telemetry to fix Netlify build issues
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  
   // Environment variables
   env: {
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000',

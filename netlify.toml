@@ -1,4 +1,7 @@
 [build]
   base = "frontend/"
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "out"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
