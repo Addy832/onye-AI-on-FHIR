@@ -3,9 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // Output configuration for Netlify deployment
+  // Output configuration for Netlify static deployment
+  output: 'export',
   trailingSlash: true,
-  distDir: '.next',
+  distDir: 'out',
   
   // Environment variables
   env: {
