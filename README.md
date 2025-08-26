@@ -60,7 +60,22 @@ This system bridges the gap between healthcare professionals and complex healthc
 
 ## 🚀 Quick Start
 
-### Local Development Setup
+### Ultra-Fast Setup (Recommended)
+
+#### Windows
+Simply **double-click `start-all.bat`** to start both servers automatically!
+
+#### Mac/Linux/WSL
+```bash
+chmod +x start-all.sh
+./start-all.sh
+```
+
+Both servers will start:
+- **Frontend**: http://localhost:3000 *(Main application)*
+- **Backend**: http://localhost:5000/api/health
+
+### Manual Development Setup
 
 **Prerequisites:**
 - **Node.js** 18.x or higher
