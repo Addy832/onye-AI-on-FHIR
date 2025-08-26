@@ -7,7 +7,7 @@
 [build.environment]
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.20.8"
   NPM_CONFIG_PRODUCTION = "false"
 
 # Next.js specific settings

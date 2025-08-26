@@ -3,8 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // Output configuration for standalone deployment
-  output: 'standalone',
+  // Output configuration for Netlify deployment
+  trailingSlash: true,
+  distDir: '.next',
   
   // Environment variables
   env: {
