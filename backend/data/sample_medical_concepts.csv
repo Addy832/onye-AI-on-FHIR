@@ -1,0 +1,4 @@
+name,primary_term,synonyms,icd10,snomed_ct,umls_cui,category,subcategory,description,body_system,severity,onset_type
+migraine,Migraine,migraine headache|severe headache|vascular headache,G43.9,37796009,C0149931,neurological,headache_disorders,migraine headache neurological vascular pain,nervous_system,moderate,episodic
+gastroenteritis,Gastroenteritis,stomach flu|intestinal flu|gastric flu|food poisoning,K59.1,25374005,C0017160,digestive,inflammatory_bowel,gastroenteritis digestive inflammation intestinal stomach,digestive_system,mild,acute
+osteoporosis,Osteoporosis,bone loss|bone density loss|brittle bone disease,M81.9,64859006,C0029456,musculoskeletal,bone_disorders,osteoporosis bone density skeletal fragility fracture,skeletal_system,moderate,chronic

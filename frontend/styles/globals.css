@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --color-medical-primary: #0ea5e9;
+  --color-medical-secondary: #0284c7;
+  --color-health-primary: #22c55e;
+  --color-health-secondary: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  
+  --shadow-medical: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+  --shadow-health: 0 4px 6px -1px rgba(34, 197, 94, 0.1), 0 2px 4px -1px rgba(34, 197, 94, 0.06);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  font-feature-settings: 'cv03', 'cv04', 'cv11';
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(110deg, #e2e8f0 8%, #f1f5f9 18%, #e2e8f0 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Medical Card Styles */
+.medical-card {
+  @apply bg-white rounded-xl shadow-medical border border-medical-100 hover:shadow-lg transition-all duration-300;
+}
+
+.health-card {
+  @apply bg-white rounded-xl shadow-health border border-health-100 hover:shadow-lg transition-all duration-300;
+}
+
+/* Custom Input Styles */
+.medical-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 transition-all duration-200;
+}
+
+.medical-input:focus {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* Button Styles */
+.btn-medical {
+  @apply bg-medical-600 hover:bg-medical-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-medical-500 focus:ring-offset-2;
+}
+
+.btn-medical:disabled {
+  @apply bg-gray-400 cursor-not-allowed hover:bg-gray-400;
+}
+
+.btn-health {
+  @apply bg-health-600 hover:bg-health-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-health-500 focus:ring-offset-2;
+}
+
+.btn-outline {
+  @apply border-2 border-medical-600 text-medical-600 hover:bg-medical-600 hover:text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-medical-500 focus:ring-offset-2;
+}
+
+/* Chart Styles */
+.chart-container {
+  @apply bg-white rounded-xl p-6 shadow-medical border border-medical-100;
+}
+
+.chart-container canvas {
+  @apply w-full h-full;
+}
+
+/* Table Styles */
+.medical-table {
+  @apply w-full bg-white rounded-xl shadow-medical border border-medical-100 overflow-hidden;
+}
+
+.medical-table th {
+  @apply bg-medical-50 px-6 py-4 text-left text-xs font-semibold text-medical-900 uppercase tracking-wider border-b border-medical-100;
+}
+
+.medical-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b border-gray-100;
+}
+
+.medical-table tr:hover {
+  @apply bg-medical-50;
+}
+
+/* Alert Styles */
+.alert {
+  @apply p-4 rounded-lg border-l-4 mb-4;
+}
+
+.alert-info {
+  @apply bg-medical-50 border-medical-400 text-medical-800;
+}
+
+.alert-success {
+  @apply bg-health-50 border-health-400 text-health-800;
+}
+
+.alert-warning {
+  @apply bg-warning-50 border-warning-400 text-warning-800;
+}
+
+.alert-error {
+  @apply bg-danger-50 border-danger-400 text-danger-800;
+}
+
+/* Form Validation */
+.input-error {
+  @apply border-danger-500 focus:ring-danger-500 focus:border-danger-500;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  @apply text-danger-600 text-sm mt-1 flex items-center;
+}
+
+/* Autocomplete Dropdown */
+.autocomplete-dropdown {
+  @apply absolute z-50 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto mt-1;
+}
+
+.autocomplete-item {
+  @apply px-4 py-3 cursor-pointer hover:bg-medical-50 border-b border-gray-100 last:border-b-0;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected {
+  @apply bg-medical-50 text-medical-700;
+}
+
+/* Progress Bars */
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+.progress-bar-fill {
+  @apply bg-medical-600 h-2 rounded-full transition-all duration-300 ease-out;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg opacity-0 transition-opacity duration-300;
+}
+
+.tooltip-trigger:hover .tooltip {
+  @apply visible opacity-100;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .medical-table {
+    @apply text-sm;
+  }
+  
+  .medical-table th,
+  .medical-table td {
+    @apply px-3 py-2;
+  }
+  
+  .btn-medical,
+  .btn-health,
+  .btn-outline {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+  .dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  .dark .medical-card,
+  .dark .health-card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark .medical-input {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Visible for Better Accessibility */
+.focus-visible:focus-visible {
+  @apply outline-2 outline-offset-2 outline-medical-600;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .medical-card,
+  .health-card,
+  .chart-container {
+    @apply shadow-none border border-gray-300;
+  }
+}

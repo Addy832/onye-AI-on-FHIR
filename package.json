@@ -1,0 +1,55 @@
+{
+  "name": "ai-on-fhir",
+  "version": "1.0.0",
+  "description": "AI-powered healthcare data querying system using FHIR standards",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-on-fhir.git"
+  },
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && python app.py",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "test:backend": "cd backend && python -m pytest tests/",
+    "test:frontend": "cd frontend && npm test",
+    "lint:backend": "cd backend && flake8 .",
+    "lint:frontend": "cd frontend && npm run lint",
+    "deploy:netlify": "cd frontend && netlify deploy --prod --dir=.next",
+    "health:backend": "curl -f http://localhost:5000/api/health",
+    "health:frontend": "curl -f http://localhost:3000/api/health"
+  },
+  "keywords": [
+    "healthcare",
+    "fhir",
+    "ai",
+    "nlp",
+    "biobert",
+    "medical",
+    "hipaa",
+    "docker",
+    "nextjs",
+    "flask"
+  ],
+  "author": "AI on FHIR Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.10.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "config": {
+    "backend_port": "5000",
+    "frontend_port": "3000",
+    "dev_backend_port": "5001",
+    "dev_frontend_port": "3001"
+  }
+}
